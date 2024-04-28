@@ -1,3 +1,5 @@
+# About 
+
 My name is Sam Estrin, and my career began at fifteen as a co-founder and original CTO of MotherNature.com, the world's largest online vitamin and supplement supplier at the time. The company went public in 1999, reaching a peak market cap of $600M.
 
 At nineteen, I co-founded MediaWebcast, a publicly traded trans-media company creating cable TV shows for revenue generation through content partnerships. As CTO, I managed TV show websites, infrastructure, and developed software products like MediaLimiter, contributing to the company's valuation. MediaWebcast reached a peak market cap of $70M.
