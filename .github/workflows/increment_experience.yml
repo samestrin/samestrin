@@ -1,0 +1,28 @@
+name: Increment Experience Years
+
+on:
+  schedule:
+    # Runs at 00:00 on January 1st of every year
+    - cron: "0 0 1 1 *"
+
+jobs:
+  update-years:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Increment experience years
+        run: |
+          sed -i 's/[0-9]\+ years of experience/$(($(grep -oP "\d+(?= years of experience)" README.md) + 1)) years of experience/' README.md
+
+      - name: Commit and push if changed
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add README.md
+          git diff --staged --exit-code || git commit -m "Increment experience years"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
